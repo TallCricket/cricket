@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Cricket Scores</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #0a74da, #0e1a3a);
+            color: #fff;
+            text-align: center;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background: #003366;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .search-bar {
+            margin: 20px auto;
+            max-width: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .search-bar input {
+            width: 80%;
+            padding: 10px;
+            border-radius: 4px 0 0 4px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            background: #00aaff;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background: #007acc;
+        }
+
+        #powered-by {
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+        #powered-by a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+
+        #powered-by a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 20px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .search-bar input {
+                width: 70%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 18px;
+            }
+
+            .search-bar input {
+                width: 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Live Cricket Scores</h1>
+    </header>
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for teams or matches...">
+            <button onclick="searchScores()">Search</button>
+        </div>
+        <div data-widget-type="entityScores" data-entity-type="league" data-entity-id="5970" data-lang="en" data-widget-id="1bcaf28e-a29d-4fa0-bb9d-ba6c1ea8ead4" data-use-scrolling-buttons="true"></div>
+        <div id="powered-by">Powered by <a id="powered-by-link" href="https://www.365scores.com" target="_blank">365Scores.com</a></div>
+    </div>
+    <script src="https://widgets-dev.365scores.com/main.js"></script>
+    <script>
+        function searchScores() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            alert(`Search functionality is under development. You searched for: "${query}"`);
+        }
+    </script>
+</body>
+</html>

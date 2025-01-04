@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TallCricket - Daily Cricket News & Blogs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <h1 class="main-title"><a href="index.html">TallCricket</a></h1>
+                <!-- Hamburger Menu -->
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <!-- Navigation Menu -->
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="testmatches.html"target="_blank" class="active">Test Matches</a></li>
+                        <li> <a href="liveiplscores.html">IPL Scores</a></li>
+                        <li> <a href="indianmatches.html">Indian Matches</a></li>
+                        <li> <a href="cricketmatchscore.html">Live Scores</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                       
+                    </ul>
+                </nav>
+                <div id="search-container">
+                    <input type="text" id="search-bar" placeholder="Search the site...">
+                    <button onclick="searchSite()">Search</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="content">
+        
+        
+        
+
+        <section id="blogs">
+            <h2>Featured Blogs</h2>
+            <div class="blog">
+                <div class="blog-post">
+                    <img src="https://via.placeholder.com/300" alt="Blog 1">
+                    <h3>Blog Title 1</h3>
+                    <p>A short summary of the blog goes here...</p>
+                </div>
+                <div class="blog-post">
+                    <img src="https://via.placeholder.com/300" alt="Blog 2">
+                    <h3>Blog Title 2</h3>
+                    <p>A short summary of the blog goes here...</p>
+                </div>
+                <div class="blog-post">
+                    <img src="https://via.placeholder.com/300" alt="Blog 3">
+                    <h3>Blog Title 3</h3>
+                    <p>A short summary of the blog goes here...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="youtube-videos">
+            <h2>Check Out Our YouTube Channel</h2>
+            <p>Watch the latest cricket videos on our YouTube channel.</p>
+
+            <div class="video-container">
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/_MfPxeGDLwM" allowfullscreen></iframe>
+                    <p>Will India Play in Pakistan? ICC Champions Trophy 2025 Drama!</p>
+                </div>
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/i52ultDd6Fw" allowfullscreen></iframe>
+                    <p>Video Title 2</p>
+                </div>
+                <div class="video">
+                    <iframe src="https://www.youtube.com/embed/qHhMCDmOoWY" allowfullscreen></iframe>
+                    <p>Video Title 3</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cricket-calculators">
+            <h2>Cricket Calculators</h2>
+            <ul>
+                <li><a href="battingstrike.html" target="_blank">Batting Strike Rate Calculator</a></li>
+                <li><a href="bowlingaverage.html" target="_blank">Bowling Average Calculator</a></li>
+                <li><a href="runrate.html" target="_blank">Run Rate Calculator</a></li>
+                <li><a href="followon.html" target="_blank">Follow On in Test Calculator</a></li>
+                <li><a href="dls.html" target="_blank">DLS calculator</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 TallCricket. All rights reserved.</p>
+        <p><a href="privacypolicy.html" target="_blank">Privacy Policy</a></p>
+        <p><a href="terms.html" target="_blank">Terms of Service</a></p>
+    </footer>
+
+    
+</body>
+</html>

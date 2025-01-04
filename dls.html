@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duckworth-Lewis Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            color: #00bcd4;
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 0;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #333;
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        button {
+            background-color: #00bcd4;
+            color: white;
+            font-size: 16px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #0097a7;
+        }
+
+        .result {
+            font-size: 20px;
+            margin-top: 20px;
+            font-weight: 700;
+            color: #00bcd4;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .info-text {
+            font-size: 14px;
+            color: #777;
+            margin-top: 10px;
+        }
+
+        .clear-btn {
+            background-color: red;
+        }
+
+        .clear-btn:hover {
+            background-color: darkred;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .button-group button {
+            width: 30%;
+        }
+
+        /* Embedding the OmniCalculator */
+        .omni-calculator-wrapper {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .omni-calculator {
+            display: inline-block;
+            border: none;
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+        }
+
+        .omni-calculator-footer {
+            display: none;
+        }
+
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 16px;
+            }
+
+            input, button {
+                font-size: 16px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1><a href="index.html" style="color: #00bcd4; text-decoration: none;">TallCricket</a></h1>
+    <h2>Duckworth-Lewis Calculator</h2>
+
+    <!-- Embed OmniCalculator -->
+    <div class="omni-calculator-wrapper">
+        <div class="omni-calculator" data-calculator="all/duckworth-lewis" data-width="100%" data-config='{}' data-currency="INR" data-show-row-controls="false" data-version="3" data-t="1733918685932">
+            <div class="omni-calculator-header">Duckworth Lewis Calculator</div>
+            <div class="omni-calculator-footer">
+                <a href="https://www.omnicalculator.com/all/duckworth-lewis" target="_blank"><img alt="Omni" class="omni-calculator-logo" src="https://cdn.omnicalculator.com/embed/omni-calculator.svg" /></a>
+            </div>
+        </div>
+        <script async src="https://cdn.omnicalculator.com/sdk.js"></script>
+    </div>
+
+    <div class="button-group">
+        <button onclick="reloadCalculator()">Reload Calculator</button>
+        <button class="clear-btn" onclick="clearAll()">Clear All</button>
+    </div>
+</div>
+
+<script>
+    // Function to reload the page (Reset)
+    function reloadCalculator() {
+        location.reload();
+    }
+
+    // Function to clear all inputs (though the calculator itself is embedded, so no input fields here)
+    function clearAll() {
+        alert("All fields cleared. Please reload the page to reset.");
+        location.reload();
+    }
+</script>
+
+</body>
+</html>

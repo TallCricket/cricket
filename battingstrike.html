@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batting Strike Rate Calculator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        h1 {
+            color: #00bcd4;
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 0;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        /* Added clickable title styling */
+        a {
+            text-decoration: none;
+            color: #00bcd4;
+        }
+
+        a:hover {
+            color: #0097a7;
+        }
+
+        label {
+            font-size: 16px;
+            color: #333;
+            display: block;
+            margin-bottom: 10px;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #00bcd4;
+            outline: none;
+        }
+
+        button {
+            background-color: #00bcd4;
+            color: white;
+            font-size: 18px;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0097a7;
+        }
+
+        .result {
+            font-size: 20px;
+            margin-top: 20px;
+            font-weight: 700;
+            color: #00bcd4;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .info-text {
+            font-size: 14px;
+            color: #777;
+            margin-top: 10px;
+        }
+
+        /* Mobile-friendly adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 16px;
+            }
+
+            input, button {
+                font-size: 16px;
+                padding: 10px;
+            }
+        }
+
+        /* Tablet-friendly adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+        }
+
+        /* Laptop-friendly adjustments */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 35px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Updated Title with Link -->
+    <h1><a href="index.html">TallCricket</a></h1>
+    
+    <!-- Subtitle -->
+    <h2>Batting Strike Rate Calculator</h2>
+    
+    <label for="runs">Enter Runs Scored:</label>
+    <input type="number" id="runs" placeholder="Enter runs scored" />
+
+    <label for="balls">Enter Balls Faced:</label>
+    <input type="number" id="balls" placeholder="Enter balls faced" />
+
+    <button onclick="calculateStrikeRate()">Calculate Strike Rate</button>
+
+    <div class="result" id="result"></div>
+    <div class="error" id="error"></div>
+    <div class="info-text">Tip: Strike rate = (Runs / Balls Faced) * 100</div>
+</div>
+
+<script>
+    // Event listener for "Enter" key press on laptop or mobile devices
+    document.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            calculateStrikeRate();
+        }
+    });
+
+    function calculateStrikeRate() {
+        var runs = document.getElementById('runs').value;
+        var balls = document.getElementById('balls').value;
+        var result = document.getElementById('result');
+        var error = document.getElementById('error');
+        
+        // Reset result and error
+        result.textContent = '';
+        error.textContent = '';
+
+        // Validate inputs
+        if (!runs || !balls || balls <= 0) {
+            error.textContent = 'Please enter valid values for runs and balls faced.';
+            return;
+        }
+
+        // Calculate Strike Rate
+        var strikeRate = (runs / balls) * 100;
+
+        // Display result
+        result.textContent = 'Batting Strike Rate: ' + strikeRate.toFixed(2);
+    }
+</script>
+
+</body>
+</html>
